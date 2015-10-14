@@ -8,6 +8,9 @@ go:
 before_install:
   - make deps
 
+script:
+  - $HOME/gopath/bin/goveralls -service=travis-ci
+
 notifications:
   irc: "chat.freenode.net#cherokee"
   webhooks:
