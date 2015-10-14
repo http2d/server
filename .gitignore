@@ -3,6 +3,10 @@
 *.a
 *.so
 
+# Debug
+.gdb_history
+*.debug
+
 # Folders
 _obj
 _test
@@ -22,3 +26,8 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+# Testing certs
+server.crt
+server.csr
+server.key

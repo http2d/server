@@ -1,0 +1,12 @@
+---
+server:
+  http2:
+    tls:
+      key: 'server.key'
+      cert: 'server.crt'
+
+vserver:
+  default:
+    root: /tmp/default
+  alobbs.com:
+    root: /tmp/alobbs
