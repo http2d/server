@@ -9,3 +9,5 @@ before_install:
   - go get golang.org/x/net/http2
   - go get github.com/spf13/viper
   - go get github.com/Sirupsen/logrus
+  - go get github.com/stretchr/testify
+  
