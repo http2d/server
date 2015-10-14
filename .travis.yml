@@ -7,7 +7,7 @@ go:
 
 before_install:
   # Tooling
-  make deps
+  - make deps
 
   # Server deps
   - go get -u -v golang.org/x/net/http2
