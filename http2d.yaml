@@ -8,5 +8,9 @@ server:
 vserver:
   default:
     root: /tmp/default
+    log: &default_log
+      file: /tmp/log
+
   alobbs.com:
     root: /tmp/alobbs
+    log: *default_log
