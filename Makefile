@@ -25,15 +25,15 @@ deps:
 	@go get -v -u github.com/mailgun/godebug
 
 	# Dependencies
-	@go get -u -v golang.org/x/net/http2
-  @go get -u -v github.com/spf13/viper
-  @go get -u -v github.com/Sirupsen/logrus
+	@go get -v -u golang.org/x/net/http2
+	@go get -v -u github.com/spf13/viper
+	@go get -v -u github.com/Sirupsen/logrus
 	@go get -v -u github.com/stretchr/testify
 
-  # Cover
-  @go get -u -v golang.org/x/tools/cmd/cover
-  @go get -u -v github.com/mattn/goveralls
-  @go get -u -v github.com/axw/gocov/gocov
+	# Code Coverage
+	@go get -v -u golang.org/x/tools/cmd/cover
+	@go get -v -u github.com/mattn/goveralls
+	@go get -v -u github.com/axw/gocov/gocov
 
 run: install
 	server
