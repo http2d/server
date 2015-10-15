@@ -5,7 +5,6 @@ import (
 	"html"
 	"net/http"
 
-	"github.com/spf13/viper"
 	"golang.org/x/net/http2"
 )
 
@@ -32,6 +31,7 @@ func testResponse(w http.ResponseWriter, r *http.Request) {
 
 // Init initializes the server
 func (srv *Server) Init() error {
+	// Settings
 	srv.srvInternal.Addr = ":8080"
 	http2.VerboseLogs = true
 
@@ -45,9 +45,8 @@ func (srv *Server) Init() error {
 // Run runs the server (forever)
 func (srv *Server) Run() error {
 	var err error
-
-	tlsKey := viper.GetString("server.http2.tls.key")
-	tlsCrt := viper.GetString("server.http2.tls.cert")
+	var tlsKey string
+	var tlsCrt string
 
 	if tlsKey != "" && tlsCrt != "" {
 		err = srv.srvInternal.ListenAndServeTLS(tlsCrt, tlsKey)

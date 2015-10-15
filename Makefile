@@ -26,7 +26,6 @@ deps:
 
 	# Dependencies
 	@go get -v -u golang.org/x/net/http2
-	@go get -v -u github.com/spf13/viper
 	@go get -v -u github.com/Sirupsen/logrus
 	@go get -v -u github.com/stretchr/testify
 

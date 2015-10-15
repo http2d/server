@@ -46,5 +46,6 @@ func main() {
 		log.Fatal(err)
 	}
 
+	log.Info("Exiting")
 	srv.Quit()
 }
