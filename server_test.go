@@ -7,5 +7,11 @@ import (
 )
 
 func TestOne(t *testing.T) {
-	assert.Equal(t, 1, 1)
+	var srv Server
+	var err error
+
+	err = srv.Init()
+	assert.Nil(t, err, "Could not init")
+
+	srv.Quit()
 }
