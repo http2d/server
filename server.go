@@ -10,7 +10,7 @@ import (
 
 // Server implements the HTTP2d Server class
 type Server struct {
-	srvInternal http.Server
+	http.Server
 }
 
 func testResponse(w http.ResponseWriter, r *http.Request) {
@@ -32,10 +32,10 @@ func testResponse(w http.ResponseWriter, r *http.Request) {
 // Init initializes the server
 func (srv *Server) Init() error {
 	// Settings
-	srv.srvInternal.Addr = ":8080"
+	srv.Addr = ":8080"
 	http2.VerboseLogs = true
 
-	http2.ConfigureServer(&srv.srvInternal, nil)
+	http2.ConfigureServer(&srv.Server, nil)
 
 	// Handlers
 	http.HandleFunc("/", testResponse)
@@ -49,9 +49,9 @@ func (srv *Server) Run() error {
 	var tlsCrt string
 
 	if tlsKey != "" && tlsCrt != "" {
-		err = srv.srvInternal.ListenAndServeTLS(tlsCrt, tlsKey)
+		err = srv.ListenAndServeTLS(tlsCrt, tlsKey)
 	} else {
-		err = srv.srvInternal.ListenAndServe()
+		err = srv.ListenAndServe()
 	}
 
 	return err
