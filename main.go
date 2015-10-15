@@ -1,25 +1,6 @@
 package main
 
-import (
-	"fmt"
-
-	log "github.com/Sirupsen/logrus"
-	"github.com/spf13/viper"
-)
-
-func handleConfig() error {
-	viper.SetConfigName("http2d")
-	viper.SetConfigType("yaml")
-
-	viper.AddConfigPath("./")
-	viper.AddConfigPath("$HOME")
-	viper.AddConfigPath("/etc")
-
-	if err := viper.ReadInConfig(); err != nil {
-		panic(fmt.Errorf("Fatal error config file: %s \n", err))
-	}
-	return nil
-}
+import log "github.com/Sirupsen/logrus"
 
 func setupLogging() error {
 	log.Info("Starting")
@@ -33,10 +14,6 @@ func main() {
 	// _ = "breakpoint"
 
 	setupLogging()
-
-	if err = handleConfig(); err != nil {
-		log.Fatal(err)
-	}
 
 	if err = srv.Init(); err != nil {
 		log.Fatal(err)
