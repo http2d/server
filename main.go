@@ -1,6 +1,9 @@
-package main
+package http2d
 
-import log "github.com/Sirupsen/logrus"
+import (
+	log "github.com/Sirupsen/logrus"
+	"github.com/http2d/server/server"
+)
 
 func setupLogging() error {
 	log.Info("Starting")
@@ -8,7 +11,7 @@ func setupLogging() error {
 }
 
 func main() {
-	var srv Server
+	var srv server.Server
 	var err error
 
 	// _ = "breakpoint"
