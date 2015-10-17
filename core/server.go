@@ -38,7 +38,7 @@ func (srv *Server) Init() error {
 	http2.ConfigureServer(&srv.Server, nil)
 
 	// Handlers
-	http.HandleFunc("/", testResponse)
+	/// http.HandleFunc("/", testResponse)
 	return nil
 }
 
