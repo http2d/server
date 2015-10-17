@@ -2,6 +2,7 @@
 *.o
 *.a
 *.so
+bin
 
 # Debug
 .gdb_history
