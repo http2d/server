@@ -2,7 +2,7 @@ package http2d
 
 import (
 	log "github.com/Sirupsen/logrus"
-	"github.com/http2d/server/server"
+	"github.com/http2d/server/core"
 )
 
 func setupLogging() error {
@@ -11,7 +11,7 @@ func setupLogging() error {
 }
 
 func main() {
-	var srv server.Server
+	var srv core.Server
 	var err error
 
 	// _ = "breakpoint"

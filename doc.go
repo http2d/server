@@ -4,7 +4,7 @@ package http2d
 // Blank imports help docs.
 import (
 	// server package
-	_ "github.com/http2d/server/server"
+	_ "github.com/http2d/server/core"
 	// handlers package
 	_ "github.com/http2d/server/handlers"
 )
