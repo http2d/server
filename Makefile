@@ -10,6 +10,11 @@ else
 	  @go install -x $(GOFLAGS) ./...
 endif
 
+build:
+	@go build -x -o bin/core.a ./core
+	@go build -x -o bin/handlers.a ./handlers
+	@go build -x -o bin/QA ./QA
+
 test: install
 	@go test $(GOFLAGS) ./...
 
