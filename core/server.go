@@ -5,12 +5,14 @@ import (
 	"html"
 	"net/http"
 
+	"github.com/gorilla/mux"
 	"golang.org/x/net/http2"
 )
 
 // Server implements the HTTP2d Server class
 type Server struct {
 	http.Server
+	mux *mux.Router
 }
 
 func testResponse(w http.ResponseWriter, r *http.Request) {
@@ -36,6 +38,9 @@ func (srv *Server) Init() error {
 	http2.VerboseLogs = true
 
 	http2.ConfigureServer(&srv.Server, nil)
+
+	// Gorilla's mux router
+	srv.mux = mux.NewRouter()
 
 	// Handlers
 	/// http.HandleFunc("/", testResponse)
